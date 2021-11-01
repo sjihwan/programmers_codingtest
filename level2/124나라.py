@@ -1,8 +1,25 @@
-# 숫자 1, 2, 4만 사용하는 나라, 그들만의 법칙
-# 숫자 n은 무엇으로 표현되는가
-def solution(n):
-    if n <= 3:
-        return '124'[n-1]
-    else:
-        q, r = divmod(n-1, 3) # divmod()함수는 (n-1)을 3으로 나눈 몫(q)과 나머지(r)를 반환
-        return solution(q) + '124'[r]
+# num 수를 입력받는다.
+def solution(num):
+    count = 0
+    # num이 1이 될 때까지 반복(num이 1이 아닐동안 반복)
+    while num != 1:
+        # num은 짝수인가?
+        if num % 2 == 0:
+            num = num / 2
+            count += 1
+            if count == 500:
+                if num != 1:
+                    return -1
+                else:
+                    return count
+        # num은 홀수인가?
+        else:
+            num = num * 3 + 1
+            count += 1
+            if count == 500:
+                if num != 1:
+                    return -1
+                else:
+                    return count
+
+    return count
