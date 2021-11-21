@@ -7,6 +7,6 @@ def solution(s):
     answer = s
 
     for key, value in str_n.items(): # items()함수는 딕셔너리의 키와 값 쌍을 모두 가져온다.
-        answer = answer.replace(key, value)
+        answer = answer.replace(key, value) # key를 value로 바꿔줌
 
     return int(answer)
