@@ -10,7 +10,7 @@ def check(a, b, c):
 def solution(nums):
     answer = 0
     C = list(combinations(nums, 3))
-    for i in A:
+    for i in C:
         if check(i[0], i[1], i[2]):
             answer += 1
     return answer
